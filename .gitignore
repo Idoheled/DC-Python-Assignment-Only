@@ -1,0 +1,91 @@
+# ------------------------------------------------------------------------------
+# GLOBAL GITIGNORE FOR FASTAPI + PYTHON + DOCKER PROJECT
+# Prevents committing unnecessary, sensitive, or system-specific files into Git.
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Python Bytecode and Compiled Files
+# These are generated at runtime and should not be versioned.
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# ------------------------------------------------------------------------------
+# Environment Files
+# These often contain sensitive credentials (e.g., DB URIs, admin passwords).
+# Never commit .env or secret files to Git.
+# ------------------------------------------------------------------------------
+.env
+.env.*
+
+# ------------------------------------------------------------------------------
+# Virtual Environment Folders (if not using Docker for dependency management)
+# These can be created using `python -m venv venv` or similar.
+# ------------------------------------------------------------------------------
+venv/
+env/
+.venv/
+.idea/
+
+# ------------------------------------------------------------------------------
+# VS Code and JetBrains IDE Settings (Optional)
+# Useful if multiple team members use different editors
+# ------------------------------------------------------------------------------
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+*.iml
+
+# ------------------------------------------------------------------------------
+# OS and Filesystem Specific Files
+# These are created automatically by macOS/Windows and not needed in Git.
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------------------------------------------------------
+# Docker-Related Files
+# Docker stores secrets and layers that shouldn't be versioned.
+# ------------------------------------------------------------------------------
+**/.docker
+**/secrets
+*.log
+.dockerignore
+
+# ------------------------------------------------------------------------------
+# Output & Build Artifacts
+# If you have auto-generated docs, coverage reports, or static builds.
+# ------------------------------------------------------------------------------
+dist/
+build/
+*.egg-info/
+htmlcov/
+coverage.xml
+
+# ------------------------------------------------------------------------------
+# Database Files (Optional)
+# If using local DB volume mounts for testing that shouldn’t be in Git.
+# ------------------------------------------------------------------------------
+*.sqlite3
+*.db
+dump.rdb
+
+# ------------------------------------------------------------------------------
+# Logs & Temp Files
+# Application or system logs not useful for Git history.
+# ------------------------------------------------------------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+*.pid
+
+# ------------------------------------------------------------------------------
+# FastAPI Uvicorn Reload Cache
+# Temporary cache files created when `--reload` is used
+# ------------------------------------------------------------------------------
+.reload
